@@ -10,7 +10,7 @@
     
     <!-- Css Stylesheet -->
     <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
-    <script src="{% static 'tasks/js/script.js' %}"></script>
+    <script defer src="{% static 'tasks/js/script.js' %}"></script>
     <script src="https://unpkg.com/lottie-web@5.8.0/build/player/lottie.min.js"></script>
 
 
@@ -29,10 +29,9 @@
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-        
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>  
     <title>Taskmate</title>
+    <link rel="icon" href="{% static 'tasks/img-vid/tasks.png' %}" />
 </head>
   <body>
     
@@ -55,7 +54,7 @@
             <li class="navlist"><a href="#home">Home</a></li>
             <li class="navlist"><a href="#About">About</a></li>
             <li class="navlist"><a href="#features">Features</a></li>
-            <li class="navlist"><a href="#reviews">Reviews</a></li>
+            <li class="navlist"><a href="#Whytochoose">Why Choose TaskMate?</a></li>
           </ul>
         </nav>
       </header>
@@ -91,7 +90,7 @@
       </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- popular Destinations -->
     <section class="destinations" id="features">
       <div class="container">
         <!-- title -->
@@ -114,7 +113,7 @@
             <!-- card 2 -->
             <div class="destination-card swiper-slide">
               <img
-              src="{% static 'tasks/img-vid/Priority.png' %}"
+              src="{% static 'tasks/img-vid/priority.png' %}"
                 alt=""
                 width="203"
                 height="181"
@@ -136,7 +135,7 @@
             <!-- card 4 -->
             <div class="destination-card swiper-slide">
               <img
-              src="{% static 'tasks/img-vid/Progress.png' %}"
+              src="{% static 'tasks/img-vid/progress.png' %}"
                 alt=""
                 width="203"
                 height="181"
@@ -171,46 +170,40 @@
       </div>
     </section>
 
+
     <!-- Reviews Section -->
-    <section id="Reviews">
+    <section id="Whytochoose">
       <div class="container">
         <div class="title-container">
-          <h2 class="section-title">User Reviews</h2>
+          <h2 class="section-title">Why Choose TaskMate?</h2>
         </div>
         <div class="tours-cards">
           <div class="tours-card">
             <div class="tour-img">
-              <img src="https://media.istockphoto.com/id/1406197730/photo/portrait-of-a-young-handsome-indian-man.jpg?s=612x612&w=0&k=20&c=CncNUTbw6mzGsbojks2Vt0kV85N_pQaI3zaSkBQJFTc=" alt="" width="320" height="380">
+              <img src="{% static 'tasks/img-vid/todo.png' %}" alt="" width="320" height="380">
             </div>
             <div class="tours-card-content">
               <div class="tours-card-contents-text">
-                <h3>Game-changer for my daily routine</h3>
-                <p>I've always struggled with procrastination and forgetting small but important tasks. With TaskMate, everything is so easy to manage. The clean layout and smart notifications keep me productive without feeling overwhelmed. It’s like my day finally has structure!</p>
-              </div>
-              <div class="tours-card-content-icons">
-                <h6><img src="{% static 'tasks/img-vid/calendars.png' %}" alt=""> Today</h6>
-                <h6><img src="{% static 'tasks/img-vid/user.png' %}" alt=""> Akarsh Parasar</h6>
+                <h3>Smarter Task Prioritization</h3>
+                <p>Feeling overwhelmed by a long to-do list? TaskMate makes it easy by automatically adjusting task priorities based on deadlines and your preferences. This way, you can focus on what matters most without stressing over what to do next.</p>
               </div>
             </div>
           </div>
 
           <div class="tours-card">
             <div class="tour-img">
-              <img src="https://i.pinimg.com/736x/80/05/9a/80059a0fa653ae13786400c6006421e1.jpg" alt="" width="320" height="380">
+              <img src="{% static 'tasks/img-vid/insights.png' %}" alt="" width="320" height="380">
             </div>
             <div class="tours-card-content">
               <div class="tours-card-contents-text">
-                <h3>Simplifies my chaotic schedule</h3>
-                <p>As a student balancing classes, projects, and a part-time job, TaskMate is my lifesaver. It's like having a personal assistant that keeps me accountable and focused. The reminders are a game-changer, and I never miss an important deadline now. Can't imagine life without it now!</p>
-              </div>
-              <div class="tours-card-content-icons">
-                <h6><img src="{% static 'tasks/img-vid/calendars.png' %}" alt=""> Today</h6>
-                <h6><img src="{% static 'tasks/img-vid/user.png' %}" alt=""> Harsh Choudhary</h6>
+                <h3>Insights That Drive Productivity</h3>
+                <p>Want to know how productive you’ve been? TaskMate’s easy-to-read charts show your progress at a glance. Whether it’s tasks completed by category or your most productive hours, you’ll get the motivation to keep going strong.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <br><br>
   </body>
 </html>
