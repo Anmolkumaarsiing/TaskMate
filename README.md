@@ -50,6 +50,7 @@ pip install -r requirements.txt
 <p>4. Set Up a Database:</p>
 
 ```
+python manage.py makemigrations
 python manage.py migrate
 ```
 
