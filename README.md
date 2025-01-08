@@ -1,3 +1,9 @@
+<p align="center">
+
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=000000&center=true&width=435&lines=नमस्ते%2C+I'm+Anmol+%F0%9F%91%8B">
+</p>
+
+
 <h1 align="center" id="title">TaskMate - Where Priority Meets Productivity.</h1>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
