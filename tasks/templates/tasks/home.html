@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Load static files -->
+    {% load static %}
+    
+    <!-- Css Stylesheet -->
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+    <script defer src="{% static 'tasks/js/script.js' %}"></script>
+    <script src="https://unpkg.com/lottie-web@5.8.0/build/player/lottie.min.js"></script>
+
+
+    <!-- unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- script tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Swiper CSS -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>  
+    <title>Taskmate</title>
+    <link rel="icon" href="{% static 'tasks/img-vid/tasks.png' %}" />
+</head>
+  <body>
+    
+    <!-- Showcase -->
+    <main class="main" id="home">
+      <!-- Background video -->
+      <video autoplay muted loop playsinline>
+        <source src="{% static 'tasks/img-vid/into.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <header class="header">
+        <!-- logo -->
+        <div class="logo">
+          <a href="{% url 'home' %}">Taskmate</a>
+        </div>
+
+        <!-- navbar -->
+        <nav class="navbar">
+          <ul class="navlists">
+            <li class="navlist"><a href="#About">About</a></li>
+            <li class="navlist"><a href="#features">Features</a></li>
+            <li class="navlist"><a href="#Whytochoose">Why Choose TaskMate?</a></li>
+            <li class="navlist"><a href="{% url 'login' %}">Login/Signup</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- showcase-content -->
+      <div class="showcase-content">
+        <h1>TaskMate - Where Priority Meets Productivity.</h1>
+      </div>
+    </main>
+    
+    <!-- About -->
+    <section id="About">
+      <div class="about-content">
+        <h2>About TaskMate</h2>
+        <p>
+          TaskMate is an intelligent task management system designed to help users efficiently organize and prioritize their daily tasks. 
+          By dynamically adjusting task priorities based on deadlines and user-defined rules, TaskMate ensures that the most urgent tasks are always handled first.
+          With powerful features like subtasks, dependency management, conflict resolution, and trend analysis, TaskMate empowers you to stay on top of your workload and make the most of your productive hours. 
+          Whether you are managing work, personal projects, or academic goals, TaskMate is your perfect companion for staying organized and achieving more.
+        </p>
+      </div>
+
+      <div class="about-img">
+        <div id="lottie-animation" style="width: 556px; height: 488px;"></div>
+        <script>
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('lottie-animation'),
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: '{% static "tasks/js/task.json" %}'
+            });
+        </script>
+      </div>
+    </section>
+
+    <!-- popular Destinations -->
+    <section class="destinations" id="features">
+      <div class="container">
+        <!-- title -->
+        <h2 class="section-title">Popular features</h2>
+        <!-- cards -->
+
+        <div class="swiper swiper1">
+          <div class="destinations-cards swiper-wrapper">
+            <!-- card 1 -->
+            <div class="destination-card swiper-slide">
+              <img
+                src="{% static 'tasks/img-vid/Taskbuilder.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5>Task Builder</h5>
+              <h6>Task Creation & Categorization</h6>
+            </div>
+            <!-- card 2 -->
+            <div class="destination-card swiper-slide">
+              <img
+              src="{% static 'tasks/img-vid/priority.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5>Auto-Priority</h5>
+              <h6>Priority-Based Scheduling</h6>
+            </div>
+            <!-- card 3 -->
+            <div class="destination-card swiper-slide">
+              <img
+                src="{% static 'tasks/img-vid/alert.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5>Task Alerts</h5>
+              <h6>Real-Time Notifications & Reminders </h6>
+            </div>
+            <!-- card 4 -->
+            <div class="destination-card swiper-slide">
+              <img
+              src="{% static 'tasks/img-vid/progress.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5>Progress Dashboard</h5>
+              <h6>Progress Tracking & Insights</h6>
+            </div>
+            <!-- card 5 -->
+            <div class="destination-card swiper-slide">
+              <img
+              src="{% static 'tasks/img-vid/vault.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5> Template Vault</h5>
+              <h6>Reusable Templates for Recurring Tasks</h6>
+            </div>
+            <!-- card 6 -->
+            <div class="destination-card swiper-slide">
+              <img
+              src="{% static 'tasks/img-vid/archive.png' %}"
+                alt=""
+                width="203"
+                height="181"
+              />
+              <h5> Task Archive</h5>
+              <h6>Task History & Archives</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section id="Whytochoose">
+      <div class="container">
+        <div class="title-container">
+          <h2 class="section-title">Why Choose TaskMate?</h2>
+        </div>
+        <div class="tours-cards">
+          <div class="tours-card">
+            <div class="tour-img">
+              <img src="{% static 'tasks/img-vid/todo.png' %}" alt="" width="320" height="380">
+            </div>
+            <div class="tours-card-content">
+              <div class="tours-card-contents-text">
+                <h3>Smarter Task Prioritization</h3>
+                <p>Feeling overwhelmed by a long to-do list? TaskMate makes it easy by automatically adjusting task priorities based on deadlines and your preferences. This way, you can focus on what matters most without stressing over what to do next.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tours-card">
+            <div class="tour-img">
+              <img src="{% static 'tasks/img-vid/insights.png' %}" alt="" width="320" height="380">
+            </div>
+            <div class="tours-card-content">
+              <div class="tours-card-contents-text">
+                <h3>Insights That Drive Productivity</h3>
+                <p>Want to know how productive you’ve been? TaskMate’s easy-to-read charts show your progress at a glance. Whether it’s tasks completed by category or your most productive hours, you’ll get the motivation to keep going strong.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br><br>
+  </body>
+</html>

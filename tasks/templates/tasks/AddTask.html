@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'tasks/css/dashboard.css' %}">
+    <script type="module" src="{% static 'tasks/js/dashboard.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-tasks"></i> TaskMate
+        </div>
+        <ul>
+            <li><a href="{% url 'task_section' %}" ><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="{% url 'AddTask' %}"class="active"><i class="fas fa-user-plus"></i> Add Tasks</a></li>
+            <li><a href="{% url 'dashboard' %}"><i class="fas fa-bookmark"></i> Tasks</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Task Alerts</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="user-info">
+                <span>Hi, {{ user.username }}</span>
+                <a href="{% url 'logout' %}" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>            
+        </header>
+
+        <div class="content">
+            <section id="dashboard" class="active-section">
+                <h2>Add Task</h2>
+                <form id="taskForm" method="POST" action="{% url 'AddTask' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="task_name">Task Name</label>
+                        <input type="text" id="task_name" name="task_name" placeholder="Task Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start_date">Start Date</label>
+                        <input type="text" id="start_date" name="start_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end_date">End Date</label>
+                        <input type="text" id="end_date" name="end_date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="Study">Study</option>
+                            <option value="projects">projects</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority" required>
+                            <option value="">Select Priority</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Save Task</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date();
+        const formattedToday = today.toISOString().split('T')[0];
+
+        // Initialize Flatpickr
+        flatpickr("#start_date", {
+            minDate: formattedToday,
+            dateFormat: "Y-m-d",
+            onChange: function (selectedDates) {
+                // Update end_date's minDate based on start_date
+                const endDatePicker = flatpickr("#end_date");
+                endDatePicker.set("minDate", selectedDates[0]);
+            },
+        });
+
+        flatpickr("#end_date", {
+            minDate: formattedToday,
+            dateFormat: "Y-m-d",
+        });
+    });
+    </script>
+</body>
+</html>
