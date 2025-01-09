@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{% static 'tasks/css/edit.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Task</h1>
+        <form method="POST" action="{% url 'edit_task' task.id %}">
+            {% csrf_token %}
+            <label for="task_name">Task Name:</label>
+            <input type="text" name="task_name" value="{{ task.task_name }}" required><br>
+
+            <label for="start_date">Start Date:</label>
+            <input type="text" id="start_date" name="start_date" value="{{ task.start_date|date:'Y-m-d' }}" required>
+
+            <label for="end_date">End Date:</label>
+            <input type="text" id="end_date" name="end_date" value="{{ task.end_date|date:'Y-m-d' }}" required>
+
+            <label for="type">Type:</label>
+            <select name="type" required>
+                <option value="Work" {% if task.type == 'Work' %}selected{% endif %}>Work</option>
+                <option value="Personal" {% if task.type == 'Personal' %}selected{% endif %}>Personal</option>
+                <option value="Urgent" {% if task.type == 'Urgent' %}selected{% endif %}>Urgent</option>
+                <option value="Study" {% if task.type == 'Study' %}selected{% endif %}>Study</option>
+                <option value="Projects" {% if task.type == 'Projects' %}selected{% endif %}>Projects</option>
+                <option value="Others" {% if task.type == 'Others' %}selected{% endif %}>Others</option>
+            </select><br>
+
+            <label for="priority">Priority:</label>
+            <select name="priority" required>
+                <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low</option>
+                <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium</option>
+                <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High</option>
+            </select><br>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date();
+        const formattedToday = today.toISOString().split('T')[0];
+
+        // Initialize Flatpickr
+        flatpickr("#start_date", {
+            minDate: formattedToday,
+            dateFormat: "Y-m-d",
+            onChange: function (selectedDates) {
+                // Update end_date's minDate based on start_date
+                const endDatePicker = flatpickr("#end_date");
+                endDatePicker.set("minDate", selectedDates[0]);
+            },
+        });
+
+        flatpickr("#end_date", {
+            minDate: formattedToday,
+            dateFormat: "Y-m-d",
+        });
+    });
+    </script>
+</body>
+</html>

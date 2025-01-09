@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'tasks/css/login.css' %}">
+    <title>Login</title>
+    <style>
+        .alert 
+        {
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="left">
+            {% if messages %}
+        <div>
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+            <h1>Welcome back</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <label>Email</label>
+                <input type="email" name="email" required>
+                <label>Password</label>
+                <input type="password" name="password" required>
+                <button type="submit">Log in</button>
+            </form>
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+        <div class="right">
+            <img src="{% static 'tasks/img-vid/gears.png' %}">
+        </div>
+    </div>
+</body>
+</html>
