@@ -1,10 +1,13 @@
+
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=000000&center=true&width=600&lines=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C+I'm+Anmol+%F0%9F%91%8B" alt="Typing SVG">
-  <br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=000000&center=true&width=600&lines=Presenting+My+Project+TaskMate+%F0%9F%93%9D" alt="Typing SVG">
+  <img src="https://camo.githubusercontent.com/8ca9bfbb544203e9a12af50b112ca062f88cb215df425964fb28056ad7672385/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f336f4b485774586c7a5448657556657774712f67697068792e676966" alt="Animated GIF">
 </p>
+
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-<h1 align="center" id="title">TaskMate - Where Priority Meets Productivity.</h1>
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/47572512/174821264-173b3e05-5664-4f6b-98c9-45585cd85bff.png">
+</p>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <p id="description">TaskMate is your personal assistant for managing tasks with ease and efficiency. Whether it's a work project or a personal goal, TaskMate helps you stay organized by letting you sort tasks based on priority—High, Medium, or Low—so you always know what's most important. You can track deadlines, update tasks, making sure nothing slips through the cracks. With TaskMate’s smart sorting and user-friendly design, staying on top of your to-do list has never been easier. It’s all about helping you focus on what matters most, so you can get things done and feel accomplished.</p>
