@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Load static files -->
+    {% load static %}
+    
+    <!-- Css Stylesheet -->
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+    <script defer src="{% static 'tasks/js/script.js' %}"></script>
+
+
+    <!-- unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- script tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Swiper CSS -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>  
+    <title>Taskmate</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906334.png" type="image/png">
+</head>
+  <body>
+    
+    <!-- Showcase -->
+    <main class="main" id="home">
+      <!-- Background video -->
+      <video autoplay muted loop playsinline>
+        <source src="{% static 'tasks/img-vid/into.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <header class="header">
+        <!-- logo -->
+        <div class="logo">
+          <a href="{% url 'home' %}">Taskmate</a>
+        </div>
+
+        <!-- navbar -->
+        <nav class="navbar">
+          <ul class="navlists">
+            <li class="navlist"><a href="#About">About</a></li>
+            <li class="navlist"><a href="#features">Features</a></li>
+            <li class="navlist"><a href="#why-choose-taskmate">Why Choose TaskMate?</a></li>
+            <li class="navlist"><a href="#comparison">comparison</a></li>
+            <li class="navlist"><a href="{% url 'login' %}">Login/Signup</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- showcase-content -->
+      <div class="showcase-content">
+        <h1>TaskMate - Where Priority Meets Productivity.</h1>
+      </div>
+    </main>
+    
+    <!-- About -->
+    <section id="about-taskmate">
+      <div class="about-container">
+        <div class="about-content">
+          <h2>About TaskMate</h2>
+          <p>TaskMate is an innovative AI-powered task management platform designed to transform how you organize, prioritize, and complete your daily activities. Whether you're handling personal goals, academic deadlines, or work projects, TaskMate adapts to your workflow and ensures you stay productive effortlessly.</p>
+          <p>With intelligent automation, seamless collaboration tools, and real-time insights, TaskMate takes the stress out of planning so you can focus on achieving your best work.</p>
+        </div>
+        <div class="about-img">
+          <img src="{% static 'tasks/img-vid/todo.png' %}" alt="About TaskMate">
+        </div>
+      </div>
+    </section>
+
+ <!-- Features Section -->
+<section id="features">
+  <div class="container">
+    <div class="title-container">
+      <h2 class="section-title">Powerful Features to Boost Your Productivity</h2>
+    </div>
+    <div class="features-grid">
+      <!-- Feature 1: Smart Task Sorting -->
+      <div class="feature-card">
+        <img src="{% static 'tasks/img-vid/priority.png' %}" alt="Sort Tasks">
+        <h3>Smart Task Sorting</h3>
+        <p>Automatically arrange tasks based on priority, ensuring the most urgent ones appear first.</p>
+      </div>
+      
+      <!-- Feature 2: Color-Coded Categorization -->
+      <div class="feature-card">
+        <img src="{% static 'tasks/img-vid/progress.png' %}" alt="Task Categorization">
+        <h3>Color-Coded Categorization</h3>
+        <p>Organize tasks by date and status using an intuitive color-coded system for easy tracking.</p>
+      </div>
+      
+      <!-- Feature 3: Graphical Task Insights -->
+      <div class="feature-card">
+        <img src="{% static 'tasks/img-vid/insights.png' %}" alt="Task Analytics">
+        <h3>Graphical Task Insights</h3>
+        <p>Visualize your productivity with detailed charts and graphs for better task management.</p>
+      </div>
+      
+      <!-- Feature 4: Urgent Task Alerts -->
+      <div class="feature-card">
+        <img src="{% static 'tasks/img-vid/alert.png' %}" alt="Urgent Tasks">
+        <h3>Urgent Task Alerts</h3>
+        <p>Get notified of tasks that need to be completed within the next 24 hours, so you never miss a deadline.</p>
+      </div>
+      
+      <!-- Feature 5: Quick Task Addition -->
+      <div class="feature-card">
+        <img src="{% static 'tasks/img-vid/todo.png' %}" alt="Add Tasks">
+        <h3>Quick Task Addition</h3>
+        <p>Easily add tasks on the go with a simple and user-friendly interface.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Why Choose TaskMate Section -->
+<section id="why-choose-taskmate">
+  <div class="title-container">
+    <h2 class="section-title">Why Choose TaskMate?</h2>
+  </div>
+    <div class="why-choose-content">
+      <div class="why-choose-text">
+        <p>TaskMate isn't just another task manager—it’s an intelligent assistant designed to make your work effortless. Our advanced AI and user-friendly interface bring you a seamless experience tailored to boost your productivity.</p>
+        <ul>
+          <li><strong>AI Smart Prioritization:</strong> Focus on tasks that truly matter with intelligent ranking.</li>
+          <li><strong>Automated Reminders:</strong> Never miss a deadline with proactive notifications.</li>
+          <li><strong>Seamless Collaboration:</strong> Work effortlessly with teams and shared tasks.</li>
+          <li><strong>Insightful Analytics:</strong> Track your productivity trends with intuitive dashboards.</li>
+          <li><strong>Customizable Workflows:</strong> Adapt TaskMate to fit your unique work style.</li>
+        </ul>
+      </div>
+      <div class="why-choose-image">
+        <img src="{% static 'tasks/img-vid/taskmate.png' %}" alt="Why Choose TaskMate">
+      </div>
+    </div>
+</section>
+
+
+    <!-- TaskMate vs. Competitors Section -->
+<section id="comparison">
+  <div class="container">
+    <div class="title-container">
+      <h2 class="section-title">TaskMate vs. Competitors</h2>
+    </div>
+    <div class="comparison-table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>TaskMate</th>
+            <th>Other Task Managers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Smart Task Prioritization</td>
+            <td><i class="uil uil-check-circle check"></i></td>
+            <td><i class="uil uil-times-circle cross"></i></td>
+          </tr>
+          <tr>
+            <td>Real-Time Notifications</td>
+            <td><i class="uil uil-check-circle check"></i></td>
+            <td><i class="uil uil-times-circle cross"></i></td>
+          </tr>
+          <tr>
+            <td>Task Templates</td>
+            <td><i class="uil uil-check-circle check"></i></td>
+            <td><i class="uil uil-minus-circle partial"></i></td>
+          </tr>
+          <tr>
+            <td>Collaboration Features</td>
+            <td><i class="uil uil-check-circle check"></i></td>
+            <td><i class="uil uil-minus-circle partial"></i></td>
+          </tr>
+          <tr>
+            <td>Advanced Progress Analytics</td>
+            <td><i class="uil uil-check-circle check"></i></td>
+            <td><i class="uil uil-times-circle cross"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+    <br><br>
+  </body>
+</html>

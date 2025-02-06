@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reuse the same CSS as the login page for a consistent look -->
+    <link rel="stylesheet" href="{% static 'tasks/css/login.css' %}">
+    <title>Sign Up</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906334.png" type="image/png">
+</head>
+<body>
+    <div class="login-wrapper">
+        <!-- Left image panel -->
+        <div class="login-image">
+            <img src="{% static 'tasks/img-vid/signup.png' %}" alt="Sign Up Illustration">
+        </div>
+        <!-- Right form panel -->
+        <div class="login-form">
+            <div class="form-container">
+                <h1>Create an account</h1>
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <div class="alert alert-danger">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" autocomplete="current-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input id="confirm_password" type="password" name="confirm_password" autocomplete="current-password" required>
+                    </div>
+                    <button type="submit">Sign up</button>
+                </form>
+                <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
