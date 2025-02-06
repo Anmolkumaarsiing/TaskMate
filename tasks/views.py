@@ -47,6 +47,8 @@ def login_view(request):
     return render(request, 'tasks/login.html')
 
 # Signup View
+from django.db import IntegrityError
+
 def signup_view(request):
     if request.user.is_authenticated:
         return redirect('task_section')
@@ -59,30 +61,42 @@ def signup_view(request):
 
         if password != confirm_password:
             messages.error(request, 'Passwords do not match')
-        elif User.objects.filter(email=email).exists():
-            messages.error(request, 'Email already registered')
-        elif User.objects.filter(first_name=name).exists():
-            messages.error(request, 'Name already exists')
-        else:
-            try:
-                user = User.objects.create_user(username=email, email=email, password=password)
-                user.first_name = name
-                user.save()
-                login(request, user)
-                return redirect('task_section')
-            except IntegrityError:
-                messages.error(request, 'There was an error creating your account. Please try again.')
+            return redirect('signup')  # Redirect back to signup
 
-    return render(request, 'tasks/signup.html', {'messages': messages.get_messages(request)})
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'Email already registered')
+            return redirect('signup')
+
+        try:
+            user = User.objects.create_user(username=email, email=email, password=password)
+            user.first_name = name
+            user.save()
+
+            # **Debugging Print Statements**
+            print(f"User created: {user}")
+
+            # Authenticate the user before logging in
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                login(request, user)
+                print("User logged in successfully")  # Debugging
+                return redirect('task_section')
+            else:
+                messages.error(request, "Account created, but login failed. Try logging in manually.")
+                return redirect('login')
+
+        except IntegrityError as e:
+            print(f"IntegrityError: {e}")
+            messages.error(request, 'Account has been created successfully, Please login now.')
+
+    return render(request, 'tasks/signup.html')
 
 # Dashboard View
 @login_required
 def dashboard(request):
-    tasks = Task.objects.filter(user=request.user)  # Fetch tasks for the logged-in user
-    print(tasks)  # Print to console for debugging purposes
+    tasks = Task.objects.filter(user=request.user)
+    print(tasks)
     return render(request, 'tasks/tasks.html', {'tasks': tasks})
-
-
 
 # Logout View
 def logout_view(request):
