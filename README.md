@@ -16,18 +16,29 @@
 
 <h2>Project Screenshots:</h2>
 
-![image](https://github.com/user-attachments/assets/1b539d5e-8974-4dd4-88e4-f28a8a30618c)
-![image](https://github.com/user-attachments/assets/0f7de85d-f124-4f63-a08d-51ded2f5584e)
-![image](https://github.com/user-attachments/assets/f41b7690-0294-436b-96d7-7d47502a01c2)
-![image](https://github.com/user-attachments/assets/8fbcf31e-d256-4101-a895-4ade3f433350)
-![image](https://github.com/user-attachments/assets/3c31f94c-769f-4957-9ac8-5cacfa4210d9)
-![image](https://github.com/user-attachments/assets/0c55e093-2a3d-436c-b242-8d1eb0fcb3af)
-![image](https://github.com/user-attachments/assets/ea5da5ef-6a84-4190-becc-1ba866be9333)
-![image](https://github.com/user-attachments/assets/94d7f90d-3c1b-4884-a0a4-6a5e2bd29c3e)
-![image](https://github.com/user-attachments/assets/141e8f36-ed01-4f33-8530-dad5d3f2c7ab)
-![image](https://github.com/user-attachments/assets/fc5df2db-25ed-4642-8cb7-e408996524d7)
+![image](https://github.com/user-attachments/assets/fc7b3eeb-5f9f-408e-80dd-aead92dcbeb2)
 
+![image](https://github.com/user-attachments/assets/4177c75a-b463-4d02-a070-6c534e3b1a66)
 
+![image](https://github.com/user-attachments/assets/951d5ca2-faaa-4673-8a54-aef6503ff721)
+
+![image](https://github.com/user-attachments/assets/b286f870-2219-463c-a45d-2ccf775a2298)
+
+![image](https://github.com/user-attachments/assets/f1bef0e8-0eab-4e74-a3ed-78d037fff6a0)
+
+![image](https://github.com/user-attachments/assets/59371be9-36cc-44e6-bd55-7a811226f440)
+
+![image](https://github.com/user-attachments/assets/2fdd612f-4e6f-4bb6-84ec-e5e013d5ac8b)
+
+![image](https://github.com/user-attachments/assets/bfe76165-2c17-4e0f-8ec2-a84df79d834f)
+
+![image](https://github.com/user-attachments/assets/eab5f45e-7ef7-4836-afb7-9355e2fec64d)
+
+![image](https://github.com/user-attachments/assets/87c8e628-9878-4b8b-b71c-fd3098b061cc)
+
+![image](https://github.com/user-attachments/assets/5d1d0c08-21fb-4545-a0e0-bb14a658bb60)
+
+![image](https://github.com/user-attachments/assets/a37af2e1-2887-4244-818d-8c487e5a2a9c)
 
 
 
